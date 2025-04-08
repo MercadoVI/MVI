@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explora el mercado más innovador para invertir en bienes raíces.">
+  <title>MVI</title>
+  <link rel="icon" href="logop.png" type="image/x-icon">
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat:wght@400;600;700&display=swap"
+    rel="stylesheet">
+  <!-- CSS principal -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- CSS específico para propiedades (se carga después para prioridad) -->
+  <link rel="stylesheet" href="propiedades.css">
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+  <div id="google_translate_element"></div>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'es',
+        includedLanguages: 'es,en,zh-CN',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+  <script>
+    // Aplica manualmente el idioma guardado en la cookie al cargar otra página
+    document.addEventListener('DOMContentLoaded', function () {
+      const googTransCookie = getCookie('googtrans');
+      if (googTransCookie) {
+        const lang = googTransCookie.split('/')[2];
+        const select = document.querySelector('.goog-te-combo');
+        if (select) {
+          select.value = lang;
+          select.dispatchEvent(new Event('change'));
+        }
+      }
+    });
+
+    function getCookie(name) {
+      const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+      if (match) return decodeURIComponent(match[2]);
+      return null;
+    }
+  </script>
+
+
+  <!-- HEADER -->
+  <header class="lux-header">
+    <div class="container header-container">
+      <a href="index.html" class="logo-link">
+        <img src="logop.png" alt="Logo MVI" class="logo">
+      </a>
+      <h1 class="lux-title">Early Stage</h1>
+      <nav class="lux-nav">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="propiedades.html">Propiedades</a></li>
+          <li><a href="resena.html">Reseñas</a></li>
+          <li><a href="MVI.html">MVI</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+      <div id="user-section">
+        <!-- Aquí se insertarán el/los botones según el estado de la sesión -->
+      </div>
+    </div>
+  </header>
+
+
+  <!-- NUEVA SECCIÓN: ÚLTIMAS OFERTAS -->
+  <section id="ofertas" class="section dark-carousel">
+    <div class="container">
+      <div class="ofertas-carousel">
+        <div class="carousel-track" id="ofertas-track">
+          <div class="card">
+            <div class="card-content">
+              <h3>HMBS-SGP</h3>
+              <h3>|</h3>
+              <p>5.000</p>
+              <h3>|</h3>
+              <span>&#9650; 0.084</span>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-content">
+              <h3>MG-JPN</h3>
+              <h3>|</h3>
+              <p>1.650</p>
+              <h3>|</h3>
+              <span>&#9650; 1.320</span>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-content">
+              <h3>SKSA-AUS</h3>
+              <h3>|</h3>
+              <p>2.800</p>
+              <h3>|</h3>
+              <span>&#9660; 0.280</span>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-content">
+              <h3>TT-USA</h3>
+              <h3>|</h3>
+              <p>5.805</p>
+              <h3>|</h3>
+              <span>&#9660; 1.870</span>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-content">
+              <h3>TB-GBR</h3>
+              <h3>|</h3>
+              <p>4.230</p>
+              <h3>|</h3>
+              <span>&#9650; 1.250</span>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-content">
+              <h3>CB-DEU</h3>
+              <h3>|</h3>
+              <p>1.398</p>
+              <h3>|</h3>
+              <span>&#9650; 1.005</span>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-content">
+              <h3>HM-ESP</h3>
+              <h3>|</h3>
+              <p>10.250</p>
+              <h3>|</h3>
+              <span>&#9660; 5.420</span>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-content">
+              <h3>SH-FRA</h3>
+              <h3>|</h3>
+              <p>0.980</p>
+              <h3>|</h3>
+              <span>&#9650; 1.220</span>
+            </div>
+          </div>
+
+
+
+
+          <div class="card">
+            <div class="card-content">
+              <h3>HMBS-SGP</h3>
+              <h3>|</h3>
+              <p>5.000</p>
+              <h3>|</h3>
+              <span>&#9650; 0.084</span>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-content">
+              <h3>MG-JPN</h3>
+              <h3>|</h3>
+              <p>1.650</p>
+              <h3>|</h3>
+              <span>&#9650; 1.320</span>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-content">
+              <h3>SKSA-AUS</h3>
+              <h3>|</h3>
+              <p>2.800</p>
+              <h3>|</h3>
+              <span>&#9660; 0.280</span>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-content">
+              <h3>TT-USA</h3>
+              <h3>|</h3>
+              <p>5.805</p>
+              <h3>|</h3>
+              <span>&#9660; 1.870</span>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-content">
+              <h3>TB-GBR</h3>
+              <h3>|</h3>
+              <p>4.230</p>
+              <h3>|</h3>
+              <span>&#9650; 1.250</span>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-content">
+              <h3>CB-DEU</h3>
+              <h3>|</h3>
+              <p>1.398</p>
+              <h3>|</h3>
+              <span>&#9650; 1.005</span>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-content">
+              <h3>HM-ESP</h3>
+              <h3>|</h3>
+              <p>10.250</p>
+              <h3>|</h3>
+              <span>&#9660; 5.420</span>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-content">
+              <h3>SH-FRA</h3>
+              <h3>|</h3>
+              <p>0.980</p>
+              <h3>|</h3>
+              <span>&#9650; 1.220</span>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="hero">
+    <div class="container">
+      <h2 class="hero-heading">No es solo invertir. Es poseer</h2>
+      <a href="propiedades.html" class="btn">Descubrir Propiedades</a>
+    </div>
+  </section>
+
+
+
+
+  <!-- PROPERTIES CAROUSEL SECTION -->
+  <section id="propiedades" class="section properties-section">
+    <div class="container">
+      <div class="carousel">
+        <h2>Propiedades Exclusivas</h2>
+        <div class="carousel-track">
+          <!-- Tarjeta 1 -->
+          <div class="cardd">
+            <img
+              src="https://static.hosteltur.com/app/public/uploads/img/articles/2024/01/11/L_082303_el-futuro-hotel-nomade-madrid-abrira-en-el-iberostar-las-letras.jpg"
+              alt="Propiedad 1">
+            <div class="cardd-content">
+              <h3>Propiedad en Madrid</h3>
+            </div>
+          </div>
+          <!-- Tarjeta 2 -->
+          <div class="cardd">
+            <img
+              src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/ee/b4/79/axel-hotel-barcelona.jpg?w=700&h=-1&s=1"
+              alt="Propiedad 2">
+            <div class="cardd-content">
+              <h3>Hotel Axel en Barcelona</h3>
+            </div>
+          </div>
+          <!-- Tarjeta 3 -->
+          <div class="cardd">
+            <img
+              src="https://cdn.prod.website-files.com/648205ffac44866ca93101c4/65dde3860e13a6ab08da22b3_SOLLY%20FAC%CC%A7ADE%20HD.webp"
+              alt="Propiedad 3">
+            <div class="cardd-content">
+              <h3>Solly Hôtel Paris</h3>
+            </div>
+          </div>
+          <!-- Tarjeta 4 -->
+          <div class="cardd">
+            <img src="https://storage.googleapis.com/www-paredro-com/uploads/2015/06/rom5.jpg" alt="Propiedad 4">
+            <div class="cardd-content">
+              <h3>Rascacielos en Roma</h3>
+            </div>
+          </div>
+          <!-- Tarjeta 5 -->
+          <div class="cardd">
+            <img
+              src="https://www.omnicon.de/wp-content/uploads/2020/06/2020-02-17-CAImmo-Berlin-cube-113-H-1-1024x683.jpg"
+              alt="Propiedad 5">
+            <div class="cardd-content">
+              <h3>Cube Building Berlín</h3>
+            </div>
+          </div>
+          <!-- Tarjeta 6 -->
+          <div class="cardd">
+            <img src="https://www.amarlondres.com/images/entrada-tower-bridge/tower-bridge-londres.jpg"
+              alt="Propiedad 6">
+            <div class="cardd-content">
+              <h3>Tower Bridge en Londres</h3>
+            </div>
+          </div>
+          <!-- Tarjeta 7 -->
+          <div class="cardd">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/432_Park_Avenue%2C_NY_%28cropped%29.jpg/1200px-432_Park_Avenue%2C_NY_%28cropped%29.jpg"
+              alt="Propiedad 7">
+            <div class="cardd-content">
+              <h3>Propiedad en Nueva York</h3>
+            </div>
+          </div>
+          <!-- Tarjeta 8 -->
+          <div class="cardd">
+            <img
+              src="https://images.adsttc.com/media/images/5e54/1be9/6ee6/7e94/3b00/0029/medium_jpg/NikkenSekkei_TokyuPlazaGinza_04.jpg?1582570467"
+              alt="Propiedad 8">
+            <div class="cardd-content">
+              <h3>Propiedad en Tokio</h3>
+            </div>
+          </div>
+          <!-- Tarjeta 9 -->
+          <div class="cardd">
+            <img
+              src="https://q-xx.bstatic.com/xdata/images/hotel/max500/603946581.jpg?k=0981f81b26f5ee8b51a4f5fa7a39be9f0bbe3a23e0e14579f95cfa69e4a9a5df&o="
+              alt="Propiedad 9">
+            <div class="cardd-content">
+              <h3>Hotel en Sídney</h3>
+            </div>
+          </div>
+          <!-- Tarjeta 10 -->
+          <div class="cardd">
+            <img
+              src="https://fotografias.lasexta.com/clipping/cmsimages01/2022/09/06/AE4555E2-693E-434D-A2CE-632EAAE98BB8/hotel-marina-bay-sands-singapur_69.jpg?crop=2000,1125,x0,y139&width=1280&height=720&optimize=high&format=webply"
+              alt="Propiedad 10">
+            <div class="cardd-content">
+              <h3>Hotel en Singapur</h3>
+            </div>
+          </div>
+
+          <!-- Tarjeta 1 -->
+          <div class="cardd">
+            <img
+              src="https://static.hosteltur.com/app/public/uploads/img/articles/2024/01/11/L_082303_el-futuro-hotel-nomade-madrid-abrira-en-el-iberostar-las-letras.jpg"
+              alt="Propiedad 1">
+            <div class="cardd-content">
+              <h3>Propiedad en Madrid</h3>
+            </div>
+          </div>
+          <!-- Tarjeta 2 -->
+          <div class="cardd">
+            <img
+              src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/ee/b4/79/axel-hotel-barcelona.jpg?w=700&h=-1&s=1"
+              alt="Propiedad 2">
+            <div class="cardd-content">
+              <h3>Hotel Axel en Barcelona</h3>
+            </div>
+          </div>
+          <!-- Tarjeta 3 -->
+          <div class="cardd">
+            <img
+              src="https://cdn.prod.website-files.com/648205ffac44866ca93101c4/65dde3860e13a6ab08da22b3_SOLLY%20FAC%CC%A7ADE%20HD.webp"
+              alt="Propiedad 3">
+            <div class="cardd-content">
+              <h3>Solly Hôtel Paris</h3>
+            </div>
+          </div>
+          <!-- Tarjeta 4 -->
+          <div class="cardd">
+            <img src="https://storage.googleapis.com/www-paredro-com/uploads/2015/06/rom5.jpg" alt="Propiedad 4">
+            <div class="cardd-content">
+              <h3>Rascacielos en Roma</h3>
+            </div>
+          </div>
+          <!-- Tarjeta 5 -->
+          <div class="cardd">
+            <img
+              src="https://www.omnicon.de/wp-content/uploads/2020/06/2020-02-17-CAImmo-Berlin-cube-113-H-1-1024x683.jpg"
+              alt="Propiedad 5">
+            <div class="cardd-content">
+              <h3>Cube Building Berlín</h3>
+            </div>
+          </div>
+          <!-- Tarjeta 6 -->
+          <div class="cardd">
+            <img src="https://www.amarlondres.com/images/entrada-tower-bridge/tower-bridge-londres.jpg"
+              alt="Propiedad 6">
+            <div class="cardd-content">
+              <h3>Tower Bridge en Londres</h3>
+            </div>
+          </div>
+          <!-- Tarjeta 7 -->
+          <div class="cardd">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/432_Park_Avenue%2C_NY_%28cropped%29.jpg/1200px-432_Park_Avenue%2C_NY_%28cropped%29.jpg"
+              alt="Propiedad 7">
+            <div class="cardd-content">
+              <h3>Propiedad en Nueva York</h3>
+            </div>
+          </div>
+          <!-- Tarjeta 8 -->
+          <div class="cardd">
+            <img
+              src="https://images.adsttc.com/media/images/5e54/1be9/6ee6/7e94/3b00/0029/medium_jpg/NikkenSekkei_TokyuPlazaGinza_04.jpg?1582570467"
+              alt="Propiedad 8">
+            <div class="cardd-content">
+              <h3>Propiedad en Tokio</h3>
+            </div>
+          </div>
+          <!-- Tarjeta 9 -->
+          <div class="cardd">
+            <img
+              src="https://q-xx.bstatic.com/xdata/images/hotel/max500/603946581.jpg?k=0981f81b26f5ee8b51a4f5fa7a39be9f0bbe3a23e0e14579f95cfa69e4a9a5df&o="
+              alt="Propiedad 9">
+            <div class="cardd-content">
+              <h3>Hotel en Sídney</h3>
+            </div>
+          </div>
+          <!-- Tarjeta 10 -->
+          <div class="cardd">
+            <img
+              src="https://fotografias.lasexta.com/clipping/cmsimages01/2022/09/06/AE4555E2-693E-434D-A2CE-632EAAE98BB8/hotel-marina-bay-sands-singapur_69.jpg?crop=2000,1125,x0,y139&width=1280&height=720&optimize=high&format=webply"
+              alt="Propiedad 10">
+            <div class="cardd-content">
+              <h3>Hotel en Singapur</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <!-- NUEVA SECCIÓN: EL MERCADO HOY -->
+  <section id="mercado-hoy" class="section">
+    <div class="container">
+      <h2>El Mercado Hoy</h2>
+      <div class="news-grid">
+        <!-- Noticia 1 -->
+
+        <div class="news-card">
+          <a href="articulo1.html" class="subrr">
+
+            <img src="Inversor.png" alt="Articulo1">
+            <div class="news-content">
+              <h3>No es solo invertir. Es poseer.</h3>
+              <p>Hay inversiones que se miden en cifras.
+                Y hay inversiones que se miden en legado.</p>
+              <p>Invertir en MVI no es prestar tu dinero.
+                Es poseer una fracción de la historia.
+                Es inscribir tu nombre en activos que muchos ven, pero pocos pueden decir: "esto también es mío."</p>
+              <p>¿Estás listo para dejar de mirar desde fuera y empezar a formar parte?
+                Descubre el acceso al legado.</p>
+            </div>
+          </a>
+
+        </div>
+        <!-- Noticia 2 -->
+        <div class="news-card">
+          <a href="articulo2.html">
+            <img src="Equity.png" alt="Noticia 2">
+            <div class="news-content">
+              <h3>No compres promesas. Compra propiedad.</h3>
+              <p>Hay quienes prestan su dinero y esperan.
+                Y hay quienes poseen. </p>
+              <p>Invertir no debería ser un acto de fe. Debería ser un acto de poder.
+                Por eso, en Mercado de Valores Inmobiliarios (MVI), no compras deuda, no prestas a terceros: adquieres
+                equity.
+                Te conviertes en copropietario real de activos únicos.
+              </p>
+            </div>
+          </a>
+        </div>
+        <!-- Noticia 3 -->
+        <div class="news-card">
+          <a href="articulo3.html" class="subrr">
+            <img src="Promotor.png" alt="Noticia 3">
+            <div class="news-content">
+              <h3>MVI revoluciona la financiación inmobiliaria: menos deuda, más expansión para los promotores</h3>
+              <p> Mercado de Valores Inmobiliarios (MVI) lanza una solución innovadora que redefine el acceso a
+                financiación para los promotores inmobiliarios en España. A través de un modelo basado en la emisión de
+                participaciones de equity real, MVI permite a los promotores captar capital de manera más rápida,
+                eficiente y sin recurrir a deuda bancaria o privada tradicional.
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NUEVA SECCIÓN: CONNECTA CON MVI -->
+<!-- NUEVA SECCIÓN: CONNECTA CON MVI -->
+<section id="connecta" class="section">
+  <div class="container">
+    <h2>Mantente informado con lo último de MVI</h2>
+    <div class="newsletter">
+      <p>Recibe en tu correo novedades, oportunidades de inversión y noticias relevantes del mercado inmobiliario.</p>
+
+      <form id="newsletter-form" action="https://formsubmit.co/ajax/contacto@mercadodevaloresinmobiliarios.com" method="POST">
+        <input type="email" name="email" placeholder="Tu correo electrónico" required>
+        
+        <!-- Opcionales -->
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="Nuevo registro para recibir noticias MVI">
+        <input type="hidden" name="_template" value="table">
+
+        <button type="submit" class="btn">Recibir Noticias</button>
+      </form>
+
+      <!-- Mensaje dinámico oculto -->
+      <div id="mensaje-newsletter" style="display: none; margin-top: 15px; color: green; font-weight: 600;">
+        ¡Gracias, recibirás las noticias más relevantes de MVI!
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("newsletter-form");
+    const mensaje = document.getElementById("mensaje-newsletter");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+
+      fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(response => {
+        if (response.ok) {
+          form.reset();
+          form.style.display = "none";
+          mensaje.style.display = "block";
+        } else {
+          alert("Hubo un problema al enviar tu solicitud. Inténtalo más tarde.");
+        }
+      })
+      .catch(() => {
+        alert("Error de red. Revisa tu conexión e inténtalo nuevamente.");
+      });
+    });
+  });
+</script>
+
+
+  <div id="popup-aviso" style="display: none;">
+    <p class="popup-texto">Actualmente, MVI no opera como un mercado de valores.</p>
+    <div class="popup-botones">
+      <button id="aceptar-popup" class="btn-popup">Aceptar</button>
+      <a href="resena.html" class="btn-popup">Ir a FAQs</a>
+    </div>
+    <button id="cerrar-popup" class="cerrar-popup">&times;</button>
+  </div>
+
+  <script>
+    const popup = document.getElementById('popup-aviso');
+    const aceptarBtn = document.getElementById('aceptar-popup');
+    const cerrarBtn = document.getElementById('cerrar-popup');
+
+    // Mostrar el popup solo si no ha sido cerrado antes
+    if (!localStorage.getItem('popupCerrado')) {
+      popup.style.display = 'flex'; // Mostrarlo
+    } else {
+      popup.style.display = 'none'; // Ocultarlo
+    }
+
+    function cerrarPopup() {
+      popup.style.display = 'none';
+      localStorage.setItem('popupCerrado', 'true'); // Guardar en localStorage
+    }
+
+    aceptarBtn.addEventListener('click', cerrarPopup);
+    cerrarBtn.addEventListener('click', cerrarPopup);
+  </script>
+
+
+  <script>
+    document.getElementById('aceptar-popup').addEventListener('click', () => {
+      document.getElementById('popup-aviso').style.display = 'none';
+    });
+
+    document.getElementById('cerrar-popup').addEventListener('click', () => {
+      document.getElementById('popup-aviso').style.display = 'none';
+    });
+  </script>
+
+
+
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-container">
+      <!-- Logo en el footer -->
+      <div class="footer-logo">
+        <a href="index.html">
+          <img src="logop.png" alt="Logo MVI" />
+        </a>
+      </div>
+      <!-- Enlaces en dos columnas -->
+      <div class="footer-links">
+        <div class="footer-column">
+          <ul>
+            <li><a href="MVI.html">Sobre nosotros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="resena.html">FAQs</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <ul>
+            <li><a href="doc.html">Documentos legales</a></li>
+            <li><a href="index.html">Carta de Intención de Colaboración</a></li>
+            <li><a href="index.html">Registro oficial de MVI</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <p> MVI está actualmente en ronda de financiación. Si desean invertir en el proyecto, envíenos una propuesta inicial
+      al correo indicado: contacto@mercadodevaloresinmobiliarios.com.</p>
+    <p>&copy; 2025 MVI. Todos los derechos reservados.</p>
+
+  </footer>
+</body>
+
+</html>
