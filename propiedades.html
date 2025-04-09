@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explora el mercado más innovador para invertir en bienes raíces." />
+  <title>MVI</title>
+  <link rel="icon" href="logop.png" type="image/x-icon" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="propiedades.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat:wght@400;600;700&display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script defer src="invertir.js"></script>
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+
+  <div id="google_translate_element"></div>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'es',
+        includedLanguages: 'es,en,zh-CN',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+  <script>
+    // Aplica manualmente el idioma guardado en la cookie al cargar otra página
+    document.addEventListener('DOMContentLoaded', function () {
+      const googTransCookie = getCookie('googtrans');
+      if (googTransCookie) {
+        const lang = googTransCookie.split('/')[2];
+        const select = document.querySelector('.goog-te-combo');
+        if (select) {
+          select.value = lang;
+          select.dispatchEvent(new Event('change'));
+        }
+      }
+    });
+
+    function getCookie(name) {
+      const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+      if (match) return decodeURIComponent(match[2]);
+      return null;
+    }
+  </script>
+
+
+  <header>
+    <div class="container header-container">
+      <a href="index.html" class="logo-link">
+        <img src="logop.png" alt="Logo MVI" class="logo" />
+      </a>
+      <h1>Early Stage</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="propiedades.html">Propiedades</a></li>
+          <li><a href="resena.html">Reseñas & FAQs</a></li>
+          <li><a href="MVI.html">MVI</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+      <div id="user-section"></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="search-section">
+      <div class="search-container container">
+        <div class="search-bar">
+          <input type="text" id="search-input" placeholder="Introduce el código de la propiedad" />
+          <button id="search-button" class="btn">Buscar</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOQUES DE TODAS LAS PROPIEDADES -->
+    <section id="property-grid" class="property-grid container"></section>
+
+    <!-- RESULTADOS DETALLADOS -->
+    <section id="property-results" class="property-results hidden container">
+      <div class="property-card">
+        <div class="property-image-container">
+          <img id="property-image" src="" alt="Imagen de la propiedad" />
+        </div>
+        <div class="property-info">
+          <h2 id="property-title">Nombre de la Propiedad</h2>
+          <p id="property-description">Breve descripción de la propiedad.</p>
+          <div class="property-stats">
+            <div class="stat"><strong>Ubicación:</strong> <span id="property-location"></span></div>
+            <div class="stat"><strong>Tipo:</strong> <span id="property-type"></span></div>
+            <div class="stat"><strong>Precio:</strong> <span id="property-price"></span></div>
+            <div class="stat"><strong>Acciones:</strong> <span id="property-size"></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="property-actions">
+        <button id="manage-operation-button" class="btn">Comprar</button>
+      </div>
+    </section>
+
+    <section id="property-analysis" class="property-analysis hidden">
+      <div class="container">
+        <div id="property-main-details" class="property-main-details hidden">
+          <h2 id="property-title-main">Nombre de la Propiedad</h2>
+          <p><strong>Valor de Mercado:</strong> <span id="property-market-value"></span></p>
+        </div>
+        <h2 class="section-title">Análisis y Estadísticas</h2>
+        <div class="analysis-content">
+
+          <div class="analysis-chart">
+            <canvas id="propertyChart"></canvas>
+          </div>
+        </div>
+
+        <h2 class="section-title">Datos Clave</h2>
+        <div class="details-grid">
+          <div><strong>Ubicación:</strong> <span id="property-ubicacion"></span></div>
+          <div><strong>Año:</strong> <span id="property-año"></span></div>
+          <div><strong>Precio Actual:</strong> <span id="property-precio"></span></div>
+          <div><strong>Valor de Mercado:</strong> <span id="property-mercado"></span></div>
+          <div><strong>Rendimiento:</strong> <span id="property-rendimiento"></span></div>
+          <div><strong>Crecimiento:</strong> <span id="property-crecimiento"></span></div>
+          <div><strong>Tipo:</strong> <span id="property-tipo"></span></div>
+          <div><strong>Ocupación:</strong> <span id="property-ocupacion"></span></div>
+        </div>
+      </div>
+
+      <section id="property-description-section" class="property-description hidden container">
+        <h2>Descripción Detallada</h2>
+        <p id="property-detailed-description"></p>
+        <div class="property-links">
+          <a href="#" id="property-link" target="_blank">Visitar Página Web</a> |
+          <a href="#" id="property-documents-link" target="_blank">Documentos</a>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-container">
+      <!-- Logo en el footer -->
+      <div class="footer-logo">
+        <a href="index.html">
+          <img src="logop.png" alt="Logo MVI" />
+        </a>
+      </div>
+      <!-- Enlaces en dos columnas -->
+      <div class="footer-links">
+        <div class="footer-column">
+          <ul>
+            <li><a href="MVI.html">Sobre nosotros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="resena.html">FAQs</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <ul>
+            <li><a href="doc.html">Documentos legales</a></li>
+            <li><a href="index.html">Carta de Intención de Colaboración</a></li>
+            <li><a href="index.html">Registro oficial de MVI</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <p> MVI está actualmente en ronda de financiación. Si desean invertir en el proyecto, envíenos una propuesta inicial
+      al correo indicado: contacto@mercadodevaloresinmobiliarios.com.</p>
+    <p>&copy; 2025 MVI. Todos los derechos reservados.</p>
+
+  </footer>
+</body>
+
+</html>

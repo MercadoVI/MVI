@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explora el mercado más innovador para invertir en bienes raíces.">
+  <title>MVI</title>
+  <link rel="icon" href="logop.png" type="image/x-icon">
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat:wght@400;600;700&display=swap"
+    rel="stylesheet">
+  <!-- CSS principal -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- CSS específico para propiedades (se carga después para prioridad) -->
+  <link rel="stylesheet" href="propiedades.css">
+  <script defer src="script.js"></script>
+</head>
+<style>
+  .popup-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    text-align: center;
+    /* ✅ Añadido */
+  }
+
+  .popup-texto {
+    font-size: 1rem;
+    margin: 0;
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+    /* ✅ Añadido */
+  }
+
+  .star-rating {
+    display: flex;
+    gap: 6px;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  .star-rating span {
+    color: #ccc;
+    transition: color 0.2s;
+  }
+
+  .star-rating span.hover,
+  .star-rating span.selected {
+    color: gold;
+  }
+</style>
+
+<body>
+
+  <div id="google_translate_element"></div>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'es',
+        includedLanguages: 'es,en,zh-CN',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+  <script>
+    // Aplica manualmente el idioma guardado en la cookie al cargar otra página
+    document.addEventListener('DOMContentLoaded', function () {
+      const googTransCookie = getCookie('googtrans');
+      if (googTransCookie) {
+        const lang = googTransCookie.split('/')[2];
+        const select = document.querySelector('.goog-te-combo');
+        if (select) {
+          select.value = lang;
+          select.dispatchEvent(new Event('change'));
+        }
+      }
+    });
+
+    function getCookie(name) {
+      const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+      if (match) return decodeURIComponent(match[2]);
+      return null;
+    }
+
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const stars = document.querySelectorAll('#star-rating span');
+      const hiddenInput = document.getElementById('calificacion');
+      const form = document.getElementById("review-form");
+      const mensaje = document.getElementById("mensaje-exito");
+
+      // Estrellas funcionales
+      stars.forEach((star, index) => {
+        star.addEventListener('mouseover', () => {
+          stars.forEach(s => s.classList.remove('hover'));
+          for (let i = 0; i <= index; i++) stars[i].classList.add('hover');
+        });
+
+        star.addEventListener('mouseout', () => {
+          stars.forEach(s => s.classList.remove('hover'));
+        });
+
+        star.addEventListener('click', () => {
+          const value = star.getAttribute('data-value');
+          hiddenInput.value = value;
+          stars.forEach(s => s.classList.remove('selected'));
+          for (let i = 0; i < value; i++) stars[i].classList.add('selected');
+        });
+      });
+
+      // Formulario AJAX sin redirección
+      if (form && mensaje) {
+        form.addEventListener("submit", function (e) {
+          e.preventDefault(); // ⛔ EVITA LA REDIRECCIÓN TRADICIONAL
+
+          const formData = new FormData(form);
+
+          fetch(form.action, {
+            method: "POST",
+            body: formData,
+            headers: {
+              'Accept': 'application/json'
+            }
+          })
+            .then(response => {
+              if (response.ok) {
+                form.reset();
+                hiddenInput.value = "";
+                stars.forEach(s => s.classList.remove('selected'));
+                form.style.display = "none";
+                mensaje.style.display = "block";
+              } else {
+                alert("Ocurrió un error al enviar tu reseña. Inténtalo de nuevo.");
+              }
+            })
+            .catch(() => {
+              alert("Error de red. Por favor, revisa tu conexión.");
+            });
+        });
+      }
+    });
+  </script>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container header-container">
+      <a href="index.html" class="logo-link">
+        <img src="logop.png" alt="Logo MVI" class="logo">
+      </a>
+      <h1>Early Stage</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="propiedades.html">Propiedades</a></li>
+          <li><a href="resena.html">Reseñas & FAQs</a></li>
+          <li><a href="MVI.html">MVI</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+      <div id="user-section">
+        <!-- Aquí se insertarán el/los botones según el estado de la sesión -->
+      </div>
+    </div>
+  </header>
+
+  <!-- NUEVA SECCIÓN: Reseñas de Clientes -->
+  <section id="resenas" class="section">
+
+    <div class="container">
+      <h2>Reseñas de Clientes</h2>
+      <h3>Tu opinión es clave para mejorar. Si lo deseas, déjanos una reseña sobre tu experiencia; valoramos mucho tu
+        feedback para mantener la calidad y excelencia.</h3>
+      <form action="https://formsubmit.co/ajax/contacto@mercadodevaloresinmobiliarios.com" method="POST"
+        id="review-form"> <!-- Campos del formulario -->
+        <label for="review-name">Nombre:</label>
+        <input type="text" name="nombre" placeholder="Tu nombre" required>
+
+        <label for="review-email">Correo:</label>
+        <input type="email" name="email" placeholder="Tu correo electrónico" required>
+
+        <label for="review-message">Reseña:</label>
+        <textarea name="mensaje" placeholder="Tu reseña" required></textarea>
+
+        <!-- Calificación con estrellas -->
+        <label for="calificacion">Calificación:</label>
+        <div class="star-rating" id="star-rating">
+          <span data-value="1">&#9733;</span>
+          <span data-value="2">&#9733;</span>
+          <span data-value="3">&#9733;</span>
+          <span data-value="4">&#9733;</span>
+          <span data-value="5">&#9733;</span>
+        </div>
+        <input type="hidden" name="calificacion" id="calificacion" required>
+
+
+
+        <!-- Opcional: evita spam bots -->
+        <input type="hidden" name="_captcha" value="false">
+        <!-- Botón -->
+        <button type="submit" class="btn">Enviar Reseña</button>
+      </form>
+      <div id="mensaje-exito"
+        style="display: none; margin-top: 20px; font-size: 1.1rem; font-weight: 600; color: green;">
+        ¡Gracias! Hemos recibido tu reseña correctamente.
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Sección FAQs -->
+  <section id="faqs" class="faq-section">
+    <div class="container">
+
+
+      <h2>Preguntas Frecuentes</h2>
+
+      <!-- FAQs Generales -->
+      <h3>FAQs Generales</h3>
+      <div class="faq-item">
+        <button class="faq-question">¿Qué es Mercado de Valores Inmobiliarios?</button>
+        <div class="faq-answer">
+          <p>Mercado de Valores Inmobiliarios (MVI) es la primera plataforma que da acceso a la inversión en inmuebles
+            de lujo desde 100€. Cualquier persona puede adquirir participaciones en activos exclusivos, recibir
+            dividendos y operar sus inversiones de forma flexible a través de un mercado secundario interno.
+            Reproducimos la experiencia de un mercado de valores, pero en el sector inmobiliario.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">¿Es MVI un mercado de valores?</button>
+        <div class="faq-answer">
+          <p>No, actualmente no lo es. Actualmente, MVI funciona como un marketplace de inversión inmobiliaria, y
+            estamos en proceso de obtención de la licencia como Plataforma de Servicios de Financiación Participativa
+            (PSFP) ante la CNMV. Nuestro objetivo es convertirnos en un mercado de valores inmobiliarios plenamente
+            regulado en 2027.
+            Si estás interesado en invertir en el proyecto y ayudarnos a acelerar este proceso, puedes contactarnos
+            siguiendo los pasos en la sección Contacto. Estaremos encantados de escucharte y avanzar juntos hacia ese
+            objetivo.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">¿Cómo funciona la plataforma?</button>
+        <div class="faq-answer">
+          <p> El acceso está reservado a usuarios registrados. Una vez registrado, podrás invertir desde 100€ en oportunidades inmobiliarias exclusivas, recibir participaciones digitales y gestionar libremente tus inversiones dentro de MVI.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">¿Es seguro invertir/publicar aquí?</button>
+        <div class="faq-answer">
+          <p>Todas las oportunidades de inversión son sometidas a un riguroso análisis financiero y jurídico. Solo publicamos proyectos validados por nuestro equipo y vehiculizados a través de SPV regulados, asegurando máxima protección y transparencia para el inversor. Además, para todas las emisiones mantenemos un contacto directo y constante con la CNMV para asegurar el cumpliento absoluto del marco legal.
+            En caso de duda o si necesitas más información, no dudes en ponerte en contacto con nosotros. Estaremos encantados de ayudarte.
+            </p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">¿Cómo me contacto con atención al cliente?</button>
+        <div class="faq-answer">
+          <p>Para contactar con nuestro equipo de atención al cliente, solo tienes que ir a la pestaña Contacto en el menú principal y enviarnos tu consulta. Estaremos encantados de ayudarte lo antes posible.</p>
+        </div>
+      </div>
+
+   
+    </div>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const faqQuestions = document.querySelectorAll(".faq-question");
+
+      faqQuestions.forEach(question => {
+        question.addEventListener("click", function () {
+          // Alterna la clase "active" para cambiar el símbolo (+ a × o similar)
+          this.classList.toggle("active");
+
+          // Selecciona el elemento de respuesta asociado
+          const answer = this.nextElementSibling;
+
+          // Alterna el max-height para desplegar o contraer
+          if (answer.style.maxHeight) {
+            answer.style.maxHeight = null;
+          } else {
+            answer.style.maxHeight = answer.scrollHeight + "px";
+          }
+        });
+      });
+    });
+
+  </script>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-container">
+      <!-- Logo en el footer -->
+      <div class="footer-logo">
+        <a href="index.html">
+          <img src="logop.png" alt="Logo MVI" />
+        </a>
+      </div>
+      <!-- Enlaces en dos columnas -->
+      <div class="footer-links">
+        <div class="footer-column">
+          <ul>
+            <li><a href="MVI.html">Sobre nosotros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="resena.html">FAQs</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <ul>
+            <li><a href="doc.html">Documentos legales</a></li>
+            <li><a href="index.html">Carta de Intención de Colaboración</a></li>
+            <li><a href="index.html">Registro oficial de MVI</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <p> MVI está actualmente en ronda de financiación. Si desean invertir en el proyecto, envíenos una propuesta inicial
+      al correo indicado: contacto@mercadodevaloresinmobiliarios.com.</p>
+    <p>&copy; 2025 MVI. Todos los derechos reservados.</p>
+
+  </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explora el mercado más innovador para invertir en bienes raíces.">
+  <title>MVI</title>
+  <link rel="icon" href="logop.png" type="image/x-icon">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- CSS principal -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- CSS específico para propiedades (se carga después para prioridad) -->
+  <link rel="stylesheet" href="propiedades.css">
+  <link rel="stylesheet" href="contacto.css">
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+  <div id="google_translate_element"></div>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'es',
+        includedLanguages: 'es,en,zh-CN',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+  
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  
+  <script>
+    // Aplica manualmente el idioma guardado en la cookie al cargar otra página
+    document.addEventListener('DOMContentLoaded', function () {
+      const googTransCookie = getCookie('googtrans');
+      if (googTransCookie) {
+        const lang = googTransCookie.split('/')[2];
+        const select = document.querySelector('.goog-te-combo');
+        if (select) {
+          select.value = lang;
+          select.dispatchEvent(new Event('change'));
+        }
+      }
+    });
+  
+    function getCookie(name) {
+      const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+      if (match) return decodeURIComponent(match[2]);
+      return null;
+    }
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggleBtn = document.querySelector(".investment-btn");
+      const proposalSection = document.getElementById("investment-proposal");
+  
+      toggleBtn.addEventListener("click", function (e) {
+        e.preventDefault(); // Evita el salto automático del enlace
+        proposalSection.classList.toggle("activo");
+      });
+    });
+  </script>
+  
+  <!-- HEADER -->
+  <header>
+    <div class="container header-container">
+      <a href="index.html" class="logo-link">
+        <img src="logop.png" alt="Logo MVI" class="logo">
+      </a>
+      <h1>Early Stage</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="propiedades.html">Propiedades</a></li>
+          <li><a href="resena.html">Reseñas & FAQs</a></li>
+          <li><a href="MVI.html">MVI</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+      <div id="user-section">
+        <!-- Aquí se insertarán el/los botones según el estado de la sesión -->
+      </div>
+    </div>
+  </header>
+  <main>
+    <section>
+      <h2>Medios de Contacto</h2>
+      <p>Email: <a
+          href="mailto:contacto@mercadodevaloresinmobiliarios.com">contacto@mercadodevaloresinmobiliarios.com</a></p>
+      <p>Teléfono: +34 685 75 32 61</p>
+    </section>
+    <section>
+      <h2>Redes Sociales</h2>
+      <ul class="social">
+        <li>
+          <a href="https://twitter.com/tuusuario" target="_blank">
+            <img src="https://www.lowi.es/blog/wp-content/uploads/2023/10/twitter-X-1000x625.jpeg" alt="">
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/company/mercado-de-valores-inmobiliarios/" target="_blank">
+            <img
+              src="https://store-images.s-microsoft.com/image/apps.1719.9007199266245564.44dc7699-748d-4c34-ba5e-d04eb48f7960.abf46174-2d32-4f53-a6cd-644d5b2be452"
+              alt="">
+          </a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/channel/tuusuario" target="_blank">
+            <img
+              src="https://play-lh.googleusercontent.com/6am0i3walYwNLc08QOOhRJttQENNGkhlKajXSERf3JnPVRQczIyxw2w3DxeMRTOSdsY"
+              alt="">
+          </a>
+        </li>
+      </ul>
+    </section>
+
+
+  </main>
+
+  <!-- Sección separada de inversión -->
+  <section id="investment">
+    <h2>Invierte en MVI</h2>
+    <p>
+      MVI está actualmente en ronda de financiación. Si deseas invertir en el proyecto, envíanos tu propuesta inicial a
+      nuestro correo.
+    </p>
+    <a href="#investment-proposal" class="btn investment-btn">
+      Enviar Propuesta
+    </a>
+  </section>
+
+  <!-- Sección de Propuesta de Inversión -->
+  <section id="investment-proposal">
+    <h2>Propuesta Inicial de Inversión</h2>
+    <p>Complete el siguiente formulario para enviarnos su propuesta inicial de inversión.</p>
+    <form id="proposal-form" action="https://formsubmit.co/contacto@mercadodevaloresinmobiliarios.com" method="POST">
+      <input type="hidden" name="_next" value="https://tu-sitio.com/gracias.html">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+    
+      <label for="proposal-email">*Correo Electrónico:</label>
+      <input type="email" id="proposal-email" name="Correo" placeholder="tu@gmail.com" required>
+    
+      <label for="proposal-phone">Teléfono:</label>
+      <input type="tel" id="proposal-phone" name="Teléfono" placeholder="000 000 000">
+    
+      <label for="proposal-message">*Propuesta de Inversión:</label>
+      <textarea id="proposal-message" name="Propuesta" rows="6" placeholder="Describa brevemente su propuesta..." required></textarea>
+    
+      <button type="submit" class="btn">Enviar Propuesta</button>
+    </form>
+    
+    <!-- Mensaje de agradecimiento oculto -->
+    <div id="mensaje-exito" style="display: none; margin-top: 20px; color: green; font-weight: 600;">
+      ✅ Gracias por tu propuesta. Nos pondremos en contacto contigo pronto.
+    </div>
+    
+    
+    
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-container">
+      <!-- Logo en el footer -->
+      <div class="footer-logo">
+        <a href="index.html">
+          <img src="logop.png" alt="Logo MVI" />
+        </a>
+      </div>
+      <!-- Enlaces en dos columnas -->
+      <div class="footer-links">
+        <div class="footer-column">
+          <ul>
+            <li><a href="MVI.html">Sobre nosotros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="resena.html">FAQs</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <ul>
+            <li><a href="doc.html">Documentos legales</a></li>
+            <li><a href="index.html">Carta de Intención de Colaboración</a></li>
+            <li><a href="index.html">Registro oficial de MVI</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <p> MVI está actualmente en ronda de financiación. Si desean invertir en el proyecto, envíenos una propuesta inicial
+      al correo indicado: contacto@mercadodevaloresinmobiliarios.com.</p>
+    <p>&copy; 2025 MVI. Todos los derechos reservados.</p>
+
+  </footer>
+
+  <script>
+    document.getElementById('proposal-form').addEventListener('submit', function (e) {
+      e.preventDefault(); // Evita que se recargue la página
+  
+      const form = e.target;
+      const formData = new FormData(form);
+  
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          form.reset(); // Limpia los campos
+          document.getElementById('mensaje-exito').style.display = 'block';
+        } else {
+          alert('Hubo un error al enviar la propuesta. Inténtalo más tarde.');
+        }
+      })
+      .catch(error => {
+        alert('Error de conexión. Inténtalo más tarde.');
+      });
+    });
+  </script>
+  
+</body>
+
+</html>

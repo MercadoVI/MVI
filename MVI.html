@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explora el mercado más innovador para invertir en bienes raíces.">
+  <title>MVI</title>
+  <link rel="icon" href="logop.png" type="image/x-icon">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- CSS principal -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- CSS específico para propiedades (se carga después para prioridad) -->
+  <link rel="stylesheet" href="propiedades.css">
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+
+  <div id="google_translate_element"></div>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'es',
+        includedLanguages: 'es,en,zh-CN',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+  
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  
+  <script>
+    // Aplica manualmente el idioma guardado en la cookie al cargar otra página
+    document.addEventListener('DOMContentLoaded', function () {
+      const googTransCookie = getCookie('googtrans');
+      if (googTransCookie) {
+        const lang = googTransCookie.split('/')[2];
+        const select = document.querySelector('.goog-te-combo');
+        if (select) {
+          select.value = lang;
+          select.dispatchEvent(new Event('change'));
+        }
+      }
+    });
+  
+    function getCookie(name) {
+      const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+      if (match) return decodeURIComponent(match[2]);
+      return null;
+    }
+  </script>
+  
+  <!-- HEADER -->
+  <header>
+    <div class="container header-container">
+      <a href="index.html" class="logo-link">
+        <img src="logop.png" alt="Logo MVI" class="logo">
+      </a>
+      <h1>Early Stage</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="propiedades.html">Propiedades</a></li>
+          <li><a href="resena.html">Reseñas & FAQs</a></li>
+          <li><a href="MVI.html">MVI</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+      <div id="user-section">
+        <!-- Aquí se insertarán el/los botones según el estado de la sesión -->
+      </div>
+    </div>
+  </header>
+
+  <!-- SECCIÓN PRINCIPAL DE INFORMACIÓN DE MVI -->
+  <main>
+    <section class="empresa-info container">
+      <div class="empresa-info-grid">
+        <!-- TEXTO -->
+        <div class="empresa-texto">
+          <h2>Historia de MVI</h2>
+          <p>
+            Cuando Álvaro Velasco, uno de nuestros fundadores, cumplió 18 años, quiso iniciarse en el mundo de las
+            inversiones. Pronto se dio cuenta de algo curioso: todos los ricos invierten en lo mismo… propiedades. Con
+            sus 50 € ahorrados y mucha ilusión, fue a intentar entrar en el sector, pero se chocó con la realidad: la
+            entrada mínima eran 40.000 €, y eso en el mejor de los casos.
+            Ahí empezó todo. Junto a su gran amigo Ignasi Navarro, comenzaron a pensar formas de romper con esas
+            barreras que hacían que invertir en inmuebles fuera un lujo para unos pocos. Durante su último año de
+            estudios, en septiembre de 2025, el proyecto tomó fuerza y dedicaron todo su tiempo a desarrollar una
+            solución real.
+            Ese primer gran paso llegó el 1 de abril, con la creación de la web de MVI: un marketplace de inversiones
+            inmobiliarias pensado para todos. En esta versión inicial ya hemos conseguido reducir algunas de las
+            barreras más importantes, como los altos costes (económicos y de tiempo) que implica buscar oportunidades
+            rentables.
+            ¿Cómo lo hicimos? Centralizando toda la oferta y demanda en un solo lugar, y asegurándonos de que las
+            propiedades publicadas permitan invertir con apenas unos cientos de euros. Esto no es el final, es solo el
+            comienzo. Porque nuestra visión es clara: crear un mercado de valores inmobiliarios verdaderamente accesible
+            para todos.
+          </p>
+
+          <h2>¿Quiénes somos?</h2>
+          <p>
+            Álvaro Velasco Vilanova es estudiante de último curso de Economía en la Universidad Autónoma de Barcelona,
+            apasionado por las inversiones desde los 16 años. Siempre ha mostrado un fuerte interés por los mercados
+            financieros y la educación financiera. En MVI, aporta visión estratégica y un enfoque centrado en la
+            accesibilidad y la transparencia. Cree en un futuro donde invertir en inmuebles sea posible para todos, no
+            solo para unos pocos.
+          </p>
+          <p> Ignasi Navarro Ferrà es estudiante de último curso de Ingeniería Electrónica en la Universitat Politècnica
+            de Barcelona. Extremadamente curioso y trabajador, destaca por su enfoque analítico y su capacidad para
+            resolver problemas complejos con soluciones prácticas. Su pasión por la tecnología y la eficiencia lo ha
+            llevado a desarrollar sistemas sólidos y escalables dentro de MVI. Cree firmemente en la innovación como
+            motor para transformar la forma en que invertimos.
+          </p>
+        </div>
+
+
+      </div>
+    </section>
+
+
+    <section class="pdf-documents container">
+      <h2>Documentos de Interés</h2>
+      <ul>
+        <li><a href="docs/Filosofia Corporativa.pdf" target="_blank">Filosofia corporativa de MVI (PDF)</a></li>
+        <li><a href="docs/Relaciones con inversores del mercado.pdf" target="_blank">Relaciones con inversores del
+            mercado (PDF)</a></li>
+        <li><a href="docs/Riesgos Potenciales.pdf" target="_blank">Riesgos Potenciales (PDF)</a></li>
+      </ul>
+    </section>
+  </main>
+
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-container">
+      <!-- Logo en el footer -->
+      <div class="footer-logo">
+        <a href="index.html">
+          <img src="logop.png" alt="Logo MVI" />
+        </a>
+      </div>
+      <!-- Enlaces en dos columnas -->
+      <div class="footer-links">
+        <div class="footer-column">
+          <ul>
+            <li><a href="MVI.html">Sobre nosotros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="resena.html">FAQs</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <ul>
+            <li><a href="doc.html">Documentos legales</a></li>
+            <li><a href="index.html">Carta de Intención de Colaboración</a></li>
+            <li><a href="index.html">Registro oficial de MVI</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <p> MVI está actualmente en ronda de financiación. Si desean invertir en el proyecto, envíenos una propuesta inicial
+      al correo indicado: contacto@mercadodevaloresinmobiliarios.com.</p>
+    <p>&copy; 2025 MVI. Todos los derechos reservados.</p>
+
+  </footer>
+
+</body>
+
+</html>

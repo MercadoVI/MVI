@@ -1,0 +1,371 @@
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #1a1a2e;
+    color: white;
+    padding: 15px 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+
+header nav ul li a:hover {
+    background-color: #e63946;
+    border-radius: 5px;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 80vh;
+    background: url('./inicial.png') no-repeat center/cover;
+    color: white;
+    text-align: center;
+}
+
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    z-index: 1;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.hero .btn {
+    background-color: #e63946;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hero .btn:hover {
+    background-color: #1a1a2e;
+    transform: translateY(-3px);
+}
+
+/* Properties Section */
+.carousel {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 30px 0;
+}
+
+.carousel-track {
+    display: flex;
+    animation: scroll-infinite 15s linear infinite;
+}
+
+.card {
+    flex: 0 0 300px;
+    margin: 0 10px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.card h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #333;
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Animación Infinita */
+@keyframes scroll-infinite {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-3300px);
+    }
+}
+
+/* Analysis Section */
+#analisis {
+    background-color: #f9fafc;
+    padding: 50px 0;
+    text-align: center;
+}
+
+#analisis h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #1a1a2e;
+    text-transform: uppercase;
+}
+
+.charts-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.chart-box {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.chart-box h3 {
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+canvas {
+    width: 100%;
+    max-height: 300px;
+}
+
+/* Contact Section */
+#contacto {
+    background-color: #e8e9eb;
+}
+
+form {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+    color: #333;
+}
+
+form input,
+form textarea,
+form button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    background: #1a1a2e;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #e63946;
+}
+
+/* Footer */
+footer {
+    background-color: #1a1a2e;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+footer p {
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+
+
+
+
+
+/* --- Inversión en Propiedad Exclusiva --- */
+body.invertir-page main {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* --- Detalles de la Propiedad --- */
+body.invertir-page .property-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+body.invertir-page .property-details img {
+    width: 100%;
+    max-width: 600px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #e63946;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+body.invertir-page .property-details h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-top: 10px;
+}
+
+body.invertir-page .property-details p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    max-width: 700px;
+    text-align: center;
+}
+
+body.invertir-page .property-stats {
+    margin-top: 20px;
+    text-align: left;
+    font-size: 1rem;
+    color: #555;
+}
+
+body.invertir-page .property-stats p {
+    margin: 5px 0;
+}
+
+/* --- Botón de Inversión --- */
+body.invertir-page #invest-button {
+    background-color: #42b883;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+body.invertir-page #invest-button:hover {
+    background-color: #35495e;
+}
+
+/* --- Menú Desplegable --- */
+body.invertir-page .invest-menu {
+    margin-top: 20px;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+}
+
+body.invertir-page .invest-menu h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+body.invertir-page .invest-menu input {
+    width: 80px;
+    padding: 5px;
+    margin: 10px 0;
+    text-align: center;
+}
+
+body.invertir-page .invest-menu button {
+    background-color: #42b883;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+body.invertir-page .invest-menu button:hover {
+    background-color: #35495e;
+}
+
+.hidden {
+    display: none;
+}
+

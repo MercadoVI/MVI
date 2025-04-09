@@ -1,0 +1,191 @@
+{
+  "propiedades": {
+    "HMBS-SGP": {
+      "titulo": "HMBS-SGP",
+      "descripcion": "Hotel Marina Bay Sands en Singapur.",
+      "img": "https://fotografias.lasexta.com/clipping/cmsimages01/2022/09/06/AE4555E2-693E-434D-A2CE-632EAAE98BB8/hotel-marina-bay-sands-singapur_69.jpg?crop=2000,1125,x0,y139&width=1280&height=720",
+      "descripciondet": "El Marina Bay Sands es un complejo de lujo icónico situado en Singapur, reconocido como uno de los destinos más prestigiosos del mundo para turismo, negocios y entretenimiento. Con una inversión inicial de 8.000 millones de dólares y una reciente ampliación de otros 8.000 millones, este activo combina innovación arquitectónica y rendimiento financiero excepcional. Su infraestructura incluye tres torres hoteleras de 55 pisos, el impresionante Sands SkyPark con una piscina infinita, un casino de clase mundial, un centro comercial de lujo, un museo ArtScience y múltiples espacios para eventos y conferencias. Generando ingresos anuales superiores a los 3.000 millones de dólares y con márgenes operativos competitivos, el Marina Bay Sands destaca como un activo de alta rentabilidad. Su reciente expansión incrementará aún más su atractivo como destino global. Ideal para inversores que buscan exposición a activos de lujo en Asia, el Marina Bay Sands ofrece oportunidades únicas de diversificación y retorno sostenible en el sector inmobiliario y de entretenimiento.",
+      "ubicacion": "Singapur, Singapur",
+      "precio": "$100",
+      "cantidad": "50.000.000",
+      "año": "2010",
+      "rendimiento": "17.5%",
+      "ocupacion": "90%",
+      "mercado": "$5,000,000,000",
+      "tipo": "Hotel",
+      "renovacion": "Cada 10 años",
+      "crecimiento": "10%",
+      "link": "https://www.marinabaysands.com/"
+    }
+  },
+  "usuarios": [
+    {
+      "id": 1,
+      "usuario": "admin1",
+      "password": "pass123",
+      "tokens": {
+        "HMBS-SGP": 68,
+        "MG-JPN": 0,
+        "TB-GBR": 0,
+        "": 0
+      }
+    },
+    {
+      "id": 2,
+      "usuario": "gestor1",
+      "password": "gestion2024",
+      "tokens": {
+        "HMBS-SGP": 9,
+        "CB-DEU": 0
+      }
+    },
+    {
+      "id": 3,
+      "usuario": "user2",
+      "password": "clave456",
+      "tokens": {
+        "HAB-ESP": 0,
+        "RR-ITA": 0,
+        "HMBS-SGP": 2
+      }
+    },
+    {
+      "id": 4,
+      "usuario": "inversor3",
+      "password": "invertir789",
+      "tokens": {
+        "SH-FRA": 0,
+        "HMBS-SGP": 0
+      }
+    },
+    {
+      "id": 5,
+      "usuario": "analista5",
+      "password": "analisis321",
+      "tokens": {
+        "SKSA-AUS": 0,
+        "HMBS-SGP": 0
+      }
+    }
+  ],
+  "offers": [
+    {
+      "id": "1",
+      "code": "HMBS-SGP",
+      "tokens": 4,
+      "price": 5,
+      "user": "admin1",
+      "active": true
+    },
+    {
+      "id": "3",
+      "code": "HMBS-SGP",
+      "tokens": 7,
+      "price": 7,
+      "user": "admin1",
+      "active": true
+    },
+    {
+      "id": "4",
+      "code": "HMBS-SGP",
+      "tokens": 6,
+      "price": 5,
+      "user": "admin1",
+      "active": true
+    },
+    {
+      "id": "5",
+      "code": "HMBS-SGP",
+      "tokens": 1,
+      "price": 15,
+      "user": "user2",
+      "active": true
+    },
+    {
+      "id": "6",
+      "code": "HMBS-SGP",
+      "tokens": 3,
+      "price": 20,
+      "user": "user2",
+      "active": true
+    }
+  ],
+  "transactions": [
+    {
+      "propertyCode": "HMBS-SGP",
+      "saleValue": 5,
+      "timestamp": "2025-04-02T11:56:44.122Z"
+    },
+    {
+      "propertyCode": "HMBS-SGP",
+      "saleValue": 5,
+      "timestamp": "2025-04-02T11:56:35.393Z"
+    },
+    {
+      "propertyCode": "HMBS-SGP",
+      "saleValue": 2,
+      "timestamp": "2025-04-02T11:56:31.695Z"
+    },
+    {
+      "propertyCode": "HMBS-SGP",
+      "saleValue": 5,
+      "timestamp": "2025-04-02T11:54:39.670Z"
+    },
+    {
+      "propertyCode": "HMBS-SGP",
+      "saleValue": 2,
+      "timestamp": "2025-04-02T11:54:22.268Z"
+    },
+    {
+      "propertyCode": "HMBS-SGP",
+      "saleValue": 2,
+      "timestamp": "2025-04-02T11:54:16.557Z"
+    },
+    {
+      "propertyCode": "HMBS-SGP",
+      "saleValue": 5,
+      "timestamp": "2025-04-02T11:51:08.573Z"
+    },
+    {
+      "propertyCode": "HMBS-SGP",
+      "saleValue": 2,
+      "timestamp": "2025-04-02T11:51:01.271Z"
+    },
+    {
+      "propertyCode": "HMBS-SGP",
+      "saleValue": 5,
+      "timestamp": "2025-04-02T11:50:54.511Z"
+    },
+    {
+      "propertyCode": "HMBS-SGP",
+      "saleValue": 5,
+      "timestamp": "2025-04-02T11:50:46.747Z"
+    },
+    {
+      "propertyCode": "HMBS-SGP",
+      "saleValue": 5,
+      "timestamp": "2025-04-02T11:50:40.172Z"
+    },
+    {
+      "propertyCode": "HMBS-SGP",
+      "saleValue": 7,
+      "timestamp": "2025-04-02T11:50:33.505Z"
+    },
+    {
+      "propertyCode": "HMBS-SGP",
+      "saleValue": 5,
+      "timestamp": "2025-04-02T11:50:26.944Z"
+    },
+    {
+      "propertyCode": "HMBS-SGP",
+      "saleValue": 5,
+      "timestamp": "2025-04-02T11:50:17.031Z"
+    },
+    {
+      "propertyCode": "HMBS-SGP",
+      "saleValue": 2,
+      "timestamp": "2025-04-02T11:50:06.248Z"
+    }
+  ],
+  "offerCounter": 7
+}

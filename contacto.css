@@ -1,0 +1,261 @@
+main {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+}
+
+section {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 0.75rem;
+}
+
+
+
+a {
+  color: #111;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #111;
+}
+
+/* Estilo para la lista de redes sociales */
+ul.social {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+ul.social li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+ul.social li a {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: #111;
+  transition: color 0.3s;
+}
+
+ul.social li a:hover {
+  color: #111;
+}
+
+ul.social li img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #ddd;
+}
+
+
+/* Sección de Inversión - Estilo Profesional con Toques Dorados */
+#investment {
+  background: linear-gradient(135deg, #fff 0%, #fff 100%);
+  border: 1px solid #111;
+  border-radius: 12px;
+  padding: 60px 40px;
+  text-align: center;
+  margin: 40px auto;
+  max-width: 800px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+  position: relative;
+}
+
+#investment h2 {
+  font-size: 2.5rem;
+  color: #111;
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#investment p {
+  font-size: 1.2rem;
+  color: #111;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+#investment .investment-btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #d4af37, #d4af37);
+  color: #fff;
+  padding: 16px 40px;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: background 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 2px solid transparent;
+}
+
+#investment .investment-btn:hover {
+  background: linear-gradient(90deg, #d4af37, #d4af37);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  border-color: #FFD700; /* Toque dorado al pasar el mouse */
+}
+
+/* Sección de Propuesta de Inversión con Estilo Similar a Inversión y Toques Dorados */
+#investment-proposal {
+  background: linear-gradient(135deg, #fff, #fff );
+  border-radius: 12px;
+  padding: 60px 40px;
+  max-width: 800px;
+  margin: 40px auto;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+  position: relative;
+}
+
+#investment-proposal h2 {
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#investment-proposal p {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+/* Sección de Propuesta de Inversión con Tonalidades Azules */
+#investment-proposal {
+  background: linear-gradient(135deg, #fff, #fff);
+  border: 1px solid #111;
+  border-radius: 12px;
+  padding: 60px 40px;
+  max-width: 800px;
+  margin: 40px auto;
+  box-shadow: 0 8px 16px #111;
+  position: relative;
+}
+
+#investment-proposal h2 {
+  font-size: 2.5rem;
+  color: #111;
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#investment-proposal p {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* Contenedor del formulario: le damos un fondo blanco limpio, con sutil sombra y padding interno */
+#proposal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #ffffff;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow:  #111;
+}
+
+/* Etiquetas con tipografía moderna y color azul oscuro */
+#proposal-form label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 5px;
+}
+
+/* Campos de entrada y área de texto con fondo sutil, bordes redondeados y transición suave */
+#proposal-form input,
+#proposal-form textarea {
+  font-size: 1rem;
+  padding: 16px;
+  border: 1px solid #111;
+  border-radius: 8px;
+  background-color: #fff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  color: #111;
+}
+
+#proposal-form input:focus,
+#proposal-form textarea:focus {
+  border-color: #111;
+  box-shadow: 0 0 1px #111;
+  outline: none;
+}
+
+/* Botón de envío con degradado azul, bordes totalmente redondeados y sombra para dar presencia */
+#proposal-form button.btn {
+  font-size: 1.1rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #111, #111);
+  padding: 18px 50px;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 1px rgba(0, 0, 0, 0.2);
+  align-self: center;
+}
+
+#proposal-form button.btn:hover {
+  background: linear-gradient(135deg, #111, #111);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 480px) {
+  #proposal-form button.btn {
+    padding: 16px 30px;
+    font-size: 1rem;
+  }
+}
+
+
+
+
+#investment-proposal {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.6s ease, opacity 0.6s ease;
+  opacity: 0;
+}
+
+#investment-proposal.activo {
+  max-height: 1000px; /* ajusta si el contenido es muy grande */
+  opacity: 1;
+}

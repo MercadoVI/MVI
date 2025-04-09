@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Explora el mercado más innovador para invertir en bienes raíces." />
+    <title>MVI</title>
+    <link rel="icon" href="logop.png" type="image/x-icon" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="propiedades.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script defer src="invertir.js"></script>
+    <script defer src="script.js"></script>
+    <style>
+
+    
+        .container {
+          display: flex;
+          width: 100%;
+        }
+    
+        .sidebar {
+          width: 250px;
+          background-color: #F8F9FA;
+          padding: 20px;
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+        }
+    
+        .sidebar h2 {
+          color: #111;
+          margin-bottom: 10px;
+          font-size: 1.2rem;
+        }
+    
+        .sidebar button {
+          background-color: #fff;
+          color: #111;
+          border: none;
+          padding: 12px;
+          border-radius: 20px;
+          text-align: left;
+          cursor: pointer;
+          font-size: 0.95rem;
+          transition: background-color 0.3s;
+          border-color: #111;
+        }
+    
+        .sidebar button:hover {
+          background-color: #6b6a6a;
+        }
+    
+        .pdf-container {
+          flex-grow: 1;
+          padding: 20px;
+        }
+    
+        .pdf-viewer {
+          width: 100%;
+          height: 1000px;
+          border: 2px solid #ccc;
+          border-radius: 8px;
+        }
+      </style>
+</head>
+
+<body>
+
+    <div id="google_translate_element"></div>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'es',
+                includedLanguages: 'es,en,zh-CN',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <script>
+        // Aplica manualmente el idioma guardado en la cookie al cargar otra página
+        document.addEventListener('DOMContentLoaded', function () {
+            const googTransCookie = getCookie('googtrans');
+            if (googTransCookie) {
+                const lang = googTransCookie.split('/')[2];
+                const select = document.querySelector('.goog-te-combo');
+                if (select) {
+                    select.value = lang;
+                    select.dispatchEvent(new Event('change'));
+                }
+            }
+        });
+
+        function getCookie(name) {
+            const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+            if (match) return decodeURIComponent(match[2]);
+            return null;
+        }
+    </script>
+
+
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo-link">
+                <img src="logop.png" alt="Logo MVI" class="logo" />
+            </a>
+            <h1>Early Stage</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="propiedades.html">Propiedades</a></li>
+                    <li><a href="resena.html">Reseñas & FAQs</a></li>
+                    <li><a href="MVI.html">MVI</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            <div id="user-section"></div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="sidebar">
+              <h2>📄 Documentos Legales</h2>
+              <button onclick="verPDF('docs/Aviso_Legal_MVI.docx.pdf')">Aviso Legal</button>
+              <button onclick="verPDF('docs/Aviso_Riesgos_Inversores_MVI_ENG.docx.pdf')">Aviso Riesgos Inversores</button>
+              <button onclick="verPDF('docs/Politica_Cookies_MVI.docx.pdf')">Política de Cookies</button>
+       </div>
+        
+            <div class="pdf-container">
+              <iframe id="visor-pdf" class="pdf-viewer" src="docs/plan-inversores.pdf"></iframe>
+            </div>
+          </div>
+        
+          <script>
+            function verPDF(ruta) {
+              document.getElementById('visor-pdf').src = ruta;
+            }
+          </script>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-container">
+            <!-- Logo en el footer -->
+            <div class="footer-logo">
+                <a href="index.html">
+                    <img src="logop.png" alt="Logo MVI" />
+                </a>
+            </div>
+            <!-- Enlaces en dos columnas -->
+            <div class="footer-links">
+                <div class="footer-column">
+                    <ul>
+                        <li><a href="MVI.html">Sobre nosotros</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="resena.html">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <ul>
+                        <li><a href="doc.html">Documentos legales</a></li>
+                        <li><a href="index.html">Carta de Intención de Colaboración</a></li>
+                        <li><a href="index.html">Registro oficial de MVI</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <p> MVI está actualmente en ronda de financiación. Si desean invertir en el proyecto, envíenos una propuesta
+            inicial
+            al correo indicado: contacto@mercadodevaloresinmobiliarios.com.</p>
+        <p>&copy; 2025 MVI. Todos los derechos reservados.</p>
+
+    </footer>
+</body>
+
+</html>
