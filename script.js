@@ -40,3 +40,26 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const toggleBtn = document.querySelector(".menu-toggle");
+  const nav = document.querySelector(".lux-nav");
+  const userSection = document.querySelector("#user-section");
+
+  // ⬇️ AÑADIMOS el userSection dentro del nav solo si está en móvil
+  function relocateUserSection() {
+    if (window.innerWidth <= 768 && !nav.contains(userSection)) {
+      nav.appendChild(userSection);
+    }
+  }
+
+  toggleBtn.addEventListener("click", () => {
+    nav.classList.toggle("show");
+  });
+
+  // Reubicar también si se redimensiona la pantalla
+  relocateUserSection();
+  window.addEventListener("resize", relocateUserSection);
+});
