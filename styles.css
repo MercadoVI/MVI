@@ -1865,13 +1865,31 @@ main.container {
   #user-section.hidden {
     display: none;
   }
-}
 
+  #google_translate_element {
+    position: static !important;
+    margin: 10px auto;
+    width: fit-content;
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+    order: 3;
+  }
 
-@media (max-width: 768px) {
-  body {
-    zoom: 0.8; /* reduce toda la web al 80% */
+  .lux-nav.show #google_translate_element {
+    display: block;
+  }
 
+  #google_translate_element .goog-te-gadget {
+    color: var(--white);
+  }
+
+  #google_translate_element select.goog-te-combo {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-color: var(--white);
   }
 }
+
+
 
