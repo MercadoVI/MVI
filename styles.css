@@ -1462,19 +1462,14 @@ main.container {
 
 
 
-/* Contenedor principal del widget */
+/* Posición fija a la derecha en escritorio */
 #google_translate_element {
-  position: fixed;
-  top: 20px;
-  left: 20px; /* ← Aquí el cambio */
-  z-index: 9999;
-  background-color: #ffffff;
-  border-radius: 12px;
-  padding: 10px 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
+  position: fixed !important;
+  top: 20px !important;
+  right: 20px !important;
+  left: auto !important;
+  z-index: 9999 !important;
 }
-
 
 #google_translate_element:hover {
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
