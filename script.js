@@ -66,3 +66,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+document.addEventListener("DOMContentLoaded", function () {
+  const translateWidget = document.getElementById("google_translate_element");
+  const nav = document.querySelector(".lux-nav");
+  const mediaQuery = window.matchMedia("(max-width: 768px)");
+
+  function moverTraductor() {
+    if (mediaQuery.matches && translateWidget && nav) {
+      // Solo si aún no está dentro del nav
+      if (!nav.contains(translateWidget)) {
+        nav.appendChild(translateWidget);
+      }
+    } else {
+      // Si no es móvil, lo devolvemos a su sitio fijo original (por si hace falta)
+      translateWidget.style.position = "fixed";
+      translateWidget.style.top = "20px";
+      translateWidget.style.left = "20px";
+    }
+  }
+
+  moverTraductor(); // Llamada inicial
+
+  // Llamar también cuando cambie el tamaño
+  window.addEventListener("resize", moverTraductor);
+});

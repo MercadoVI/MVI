@@ -1865,31 +1865,64 @@ main.container {
   #user-section.hidden {
     display: none;
   }
+}
 
+
+/* todo el contenido original sin cambios ... */
+
+/* Ajustes del widget de traducción solo para móviles dentro del menú */
+@media (max-width: 768px) {
   #google_translate_element {
-    position: static !important;
-    margin: 10px auto;
-    width: fit-content;
+    position: static;
     background-color: transparent;
+    padding: 10px 0;
     box-shadow: none;
-    padding: 0;
-    order: 3;
+    margin: 0 auto;
+    z-index: auto;
+  }
+
+  #google_translate_element .goog-te-gadget {
+    color: var(--white);
+    text-align: center;
+    font-size: 1rem;
   }
 
   .lux-nav.show #google_translate_element {
     display: block;
+    margin-top: 10px;
+  }
+}
+
+/* Ocultar el widget fuera del menú en móviles */
+@media (max-width: 768px) {
+  body:not(.menu-open) #google_translate_element {
+    display: none;
+  }
+}
+
+
+@media (max-width: 768px) {
+  #google_translate_element {
+    position: static !important;
+    margin: 10px auto 0;
+    padding: 8px 16px;
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    box-shadow: none;
+    text-align: center;
   }
 
   #google_translate_element .goog-te-gadget {
     color: var(--white);
   }
 
-  #google_translate_element select.goog-te-combo {
-    background-color: var(--primary-color);
-    color: var(--white);
-    border-color: var(--white);
+  .goog-te-combo {
+    background-color: #fff;
+    color: #000;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 1rem;
+    border: none;
+    margin-top: 5px;
   }
 }
-
-
-
