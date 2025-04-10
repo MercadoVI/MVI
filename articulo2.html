@@ -17,24 +17,62 @@
 </head>
 
 <body>
-    <header>
-        <div class="container header-container">
-            <a href="index.html" class="logo-link">
-                <img src="logop.png" alt="Logo MVI" class="logo" />
-            </a>
-            <h1>Early Stage</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="propiedades.html">Propiedades</a></li>
-                    <li><a href="resena.html">Reseñas & FAQs</a></li>
-                    <li><a href="MVI.html">MVI</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                </ul>
-            </nav>
-            <div id="user-section"></div>
-        </div>
-    </header>
+    <div id="google_translate_element"></div>
+
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+          pageLanguage: 'es',
+          includedLanguages: 'es,en,zh-CN',
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        }, 'google_translate_element');
+      }
+    </script>
+  
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  
+    <script>
+      // Aplica manualmente el idioma guardado en la cookie al cargar otra página
+      document.addEventListener('DOMContentLoaded', function () {
+        const googTransCookie = getCookie('googtrans');
+        if (googTransCookie) {
+          const lang = googTransCookie.split('/')[2];
+          const select = document.querySelector('.goog-te-combo');
+          if (select) {
+            select.value = lang;
+            select.dispatchEvent(new Event('change'));
+          }
+        }
+      });
+  
+      function getCookie(name) {
+        const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+        if (match) return decodeURIComponent(match[2]);
+        return null;
+      }
+    </script>
+  <!-- HEADER -->
+  <header class="lux-header">
+    <div class="container header-container">
+      <a href="index.html" class="logo-link">
+        <img src="logop.png" alt="Logo MVI" class="logo">
+      </a>
+      <h1 class="lux-title">Early Stage</h1>
+      <button class="menu-toggle" aria-label="Abrir menú">&#9776;</button>
+      <nav class="lux-nav">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="propiedades.html">Propiedades</a></li>
+          <li><a href="resena.html">Reseñas & FAQs</a></li>
+          <li><a href="MVI.html">MVI</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+      <div id="user-section">
+        <!-- Aquí se insertarán el/los botones según el estado de la sesión -->
+      </div>
+    </div>
+  </header>
     
     <section class="equity-block">
         <div class="equity-image"></div>

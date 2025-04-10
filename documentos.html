@@ -12,13 +12,15 @@
 
 </head>
 <body>
-  <header>
+  <!-- HEADER -->
+  <header class="lux-header">
     <div class="container header-container">
       <a href="index.html" class="logo-link">
-        <img src="logop.png" alt="Logo MVI" class="logo" />
+        <img src="logop.png" alt="Logo MVI" class="logo">
       </a>
-      <h1>Early Stage</h1>
-      <nav>
+      <h1 class="lux-title">Early Stage</h1>
+      <button class="menu-toggle" aria-label="Abrir menú">&#9776;</button>
+      <nav class="lux-nav">
         <ul>
           <li><a href="index.html">Inicio</a></li>
           <li><a href="propiedades.html">Propiedades</a></li>
@@ -27,7 +29,9 @@
           <li><a href="contacto.html">Contacto</a></li>
         </ul>
       </nav>
-      <div id="user-section"></div>
+      <div id="user-section">
+        <!-- Aquí se insertarán el/los botones según el estado de la sesión -->
+      </div>
     </div>
   </header>
   <main class="container">
