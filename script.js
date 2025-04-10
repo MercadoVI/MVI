@@ -66,13 +66,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-document.addEventListener("DOMContentLoaded", function () {
-  const isWindows = navigator.userAgent.includes("Windows");
-  const isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-
-  if (isWindows && isChrome) {
-    document.body.style.transform = "scale(0.75)";
-    document.body.style.transformOrigin = "top center";
-    document.body.style.width = "133.33%"; // compensar escala
-  }
-});
