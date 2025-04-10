@@ -66,8 +66,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-document.addEventListener("DOMContentLoaded", () => {
-  if (navigator.userAgent.includes("Windows")) {
-    document.body.classList.add("windows-adjust");
-  }
-});
