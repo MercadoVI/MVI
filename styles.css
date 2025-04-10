@@ -1865,3 +1865,19 @@ main.container {
     display: none;
   }
 }
+
+
+@media (max-width: 768px) {
+  body {
+    zoom: 0.8; /* reduce toda la web al 80% */
+
+  }
+}
+
+
+@media (max-width: 3000px) {
+  body {
+    zoom: 0.9; /* reduce toda la web al 80% */
+
+  }
+}
