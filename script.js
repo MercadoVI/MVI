@@ -63,3 +63,11 @@ document.addEventListener("DOMContentLoaded", function () {
   relocateUserSection();
   window.addEventListener("resize", relocateUserSection);
 });
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  if (navigator.userAgent.includes("Windows")) {
+    document.body.classList.add("windows-adjust");
+  }
+});
